@@ -1,10 +1,10 @@
 import whois
 
 # Perform the lookup
-domain_info = whois.whois("google.com")
+domain_info = whois.whois("142.251.34.238")
 
 # Print the full parsed data
-print(domain_info)
+print(domain_info.domain_name)
 
 # Access specific attributes
 print(f"Registrar: {domain_info.registrar}")

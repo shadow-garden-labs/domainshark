@@ -15,6 +15,7 @@ import re
 import validators
 from dns import resolver, reversename
 import dns.resolver
+import json
 
 __all__ = [
     'DomainShark'
