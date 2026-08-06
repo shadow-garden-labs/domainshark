@@ -292,7 +292,7 @@ class DomainShark():
                 print(f"► {rdata}")
 
     
-    def email_addresses(self):
+    def org_email_addresses(self):
         # Return organization domain-based emails.
 
         pass
