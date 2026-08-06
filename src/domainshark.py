@@ -239,11 +239,6 @@ class DomainShark():
         return open_ports
 
 
-    def traceroute(self):
-        # Retrieve exact pathway and latency of packets traveling from device to a destination server.
-        pass
-
-
     def os_details(self):
         # Retrieve exact pathway and latency of packets traveling from device to a destination server.
         pass
