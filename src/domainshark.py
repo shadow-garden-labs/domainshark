@@ -19,7 +19,7 @@ import json
 
 __all__ = [
     'DomainShark'
-    ]
+]
 
 __version__ = '0.0.1'
 
@@ -244,6 +244,26 @@ class DomainShark():
         pass
 
 
+    def os_details(self):
+        # Retrieve exact pathway and latency of packets traveling from device to a destination server.
+        pass
+
+
+    def host_status(self):
+
+        pass
+
+
+    def running_services(self, port):
+        # Retrieve exact pathway and latency of packets traveling from device to a destination server.
+        pass
+
+
+    def traceroute(self):
+        # Retrieve exact pathway and latency of packets traveling from device to a destination server.
+        pass
+
+
     def whois_ip_address(self):
         # Retrieve domain name registration data.
         pass
@@ -288,6 +308,14 @@ class DomainShark():
         report = {} # Generate a human readable report of data retieved from the domain name.
 
         return report
+
+
+    def rainy_day_scan(self):
+        # If you find yourself really bored one rainy afternoon, try the command nmap -Pn -sS -p 80 -iR 0 --open to locate random web servers for browsing.
+
+        pass
+
+
 
 
 
