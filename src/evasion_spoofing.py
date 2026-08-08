@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
-"""This is the Evasion and Spoofing module.
+"""This is the Evasion Spoof module.
 
 This module does evasion and spoofing techniques.
 """
 
-import json
+import pprint
 
 __all__ = [
-    'DomainShark'
+    'EvasionSpoof'
 ]
 
 __version__ = '0.0.1'
@@ -16,7 +16,7 @@ __version__ = '0.0.1'
 __author__ = 'Cid Kagenou'
 
 
-class Evasion_Spoofer():
+class EvasionSpoof():
 
 
     def spoof_ip(self):

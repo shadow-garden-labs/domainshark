@@ -25,16 +25,6 @@ __version__ = '0.0.1'
 
 __author__ = 'Cid Kagenou'
 
-SUBDOMAIN_TEXTFILE = 'src/assets/subdomain_names.txt'
-
-
-class SubdomainPrefixes():
-
-    def add_subdomain_prefixes(self):
-        # use [+] in print statements/outputs
-        
-        print(f'[+] updating file event ...')
-
 
 class DomainShark():
 
@@ -45,11 +35,13 @@ class DomainShark():
     """
 
 
-    def __init__(self, target, ports): # ports are and optional parameter.
+    def __init__(self, target, ports, subdomain_textfile_location): # ports are and optional parameter.
 
         self.target = target
 
         self.ports = list(ports)
+
+        self.subdomains_file = open(subdomain_textfile_location, 'r')
 
         self.data_conversion()
 
@@ -82,16 +74,14 @@ class DomainShark():
 
         print('[+] OPENING FILE')
 
-        self.domains_file = open(SUBDOMAIN_TEXTFILE, 'r')
-
-        self.subdomains = self.domains_file.read().splitlines()
+        self.subdomains = self.subdomains_file.read().splitlines()
     
         return self # Bound to the 'as' variable
 
 
     def __exit__(self, exc_type, exc_value, exc_traceback):
 
-        self.domains_file.close()
+        self.subdomains_file.close()
 
         print('[+] CLOSING FILE')
 
@@ -240,27 +230,27 @@ class DomainShark():
 
 
     def os_details(self):
-        # Retrieve exact pathway and latency of packets traveling from device to a destination server.
+        # Retrieve os details.
         pass
 
 
     def host_status(self):
-
+        # Retrieve host status.
         pass
 
 
     def running_services(self, port):
-        # Retrieve exact pathway and latency of packets traveling from device to a destination server.
+        # Retrieve running services on port.
         pass
 
 
     def traceroute(self):
-        # Retrieve exact pathway and latency of packets traveling from device to a destination server.
+        # Retrieve exact pathway to target.
         pass
 
 
     def whois_ip_address(self):
-        # Retrieve domain name registration data.
+        # Retrieve whois data.
         pass
 
 
@@ -268,7 +258,7 @@ class DomainShark():
         # Return Autonomous System Number (ANS), globally unique 16-bit or 32-bit number assigned to a network that manages a specific block of IP addresses.
         pass
 
-    
+
     def dns_resolver(self):
 
         # Create a DNS resolver
@@ -312,9 +302,11 @@ class DomainShark():
 
 
 
+testsubdomain_testfile = 'src/assets/subdomain_names.txt'
 
 
-with DomainShark('google.com', range(87, 89)) as test:
+with DomainShark('google.com', range(87, 89), testsubdomain_testfile) as test_target:
 
-    print(f'[+]: {repr(test)}')
-    test.dns_resolver()
+    print(f'[+]: {repr(test_target)}')
+
+    test_target.dns_resolver()

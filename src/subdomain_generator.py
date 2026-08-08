@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 
-"""This is the SubdomainPrefixes module.
+"""This is the SubdomainGenerator module.
 
 This module does domain scanning and intel recon.
 """
 
+import pprint
+
 __all__ = [
-    'SubdomainPrefixes'
+    'SubdomainGenerator'
 ]
 
 __version__ = '0.0.1'
@@ -16,7 +18,11 @@ __author__ = 'Cid Kagenou'
 SUBDOMAIN_TEXTFILE = 'src/assets/subdomain_names.txt'
 
 
-class SubdomainPrefixes():
+class SubdomainGenerator():
+
+    def __init__(self, file_location):
+
+        self.file_location = file_location
 
 
     def find_prefixes(self):
