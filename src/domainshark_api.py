@@ -10,7 +10,7 @@ from pydantic import BaseModel
 
 
 __all__ = [
-    'Domain'
+    'DomainShark'
 ]
 
 __version__ = '0.0.1'
@@ -18,12 +18,12 @@ __version__ = '0.0.1'
 __author__ = 'Cid Kagenou'
 
 
-app = FastAPI(title="Domainshark", description="A simple FastAPI project guide")
+app = FastAPI(title="DomainShark", description="A simple FastAPI project guide")
 
 default_subdomains = 'src/assets/subdomain_names.txt'
 
 
-class Domain(BaseModel):
+class DomainShark(BaseModel):
 
     target: str
 
@@ -63,17 +63,17 @@ def get_target(target_id: int):
         "target_id": target_id
     }
 
-@app.get("/target/", response_model=list[Domain])
+@app.get("/target/", response_model=list[DomainShark])
 def get_all_targets():
 
     return fake_db
 
 
 @app.post("/target/")
-def create_target(domain_target: Domain):
+def create_target(domain_target: DomainShark):
 
         return {
-        "status": "target received",
+        "status": "target located",
         "Target Data": domain_target.target,
         "Port Data": domain_target.ports,
         "SubDomain File": domain_target.subdomains_file,
