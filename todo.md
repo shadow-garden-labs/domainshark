@@ -8,8 +8,9 @@
 - Neural Network --> AI / Data Science / Machine Learning
 - Fill out missing methods
 - Human Readable Domain name
-- Return Json data instead of printing
-    ##### For:
+- ##### Convert to an API --> [FastAPI](https://fastapi.tiangolo.com/tutorial/)
+    - [Tutorial Playlist](https://www.youtube.com/watch?v=7AMjmCTumuo&list=PL-osiE80TeTsak-c-QsVeg0YYG_0TeyXI)
+    ###### For:
     - API Rate Limiting
     - Django Web Interface
     - return web error messages for try/except block
@@ -33,3 +34,8 @@
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 
+
+## IPAddressGenerator [Module]
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.

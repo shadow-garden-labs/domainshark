@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""This is the Evasion Spoof module.
+"""This is the IP Address module.
 
 This module does evasion and spoofing techniques.
 """
@@ -8,7 +8,7 @@ This module does evasion and spoofing techniques.
 import json
 
 __all__ = [
-    'EvasionSpoof'
+    'IPAddressGenerator'
 ]
 
 __version__ = '0.0.1'
@@ -16,14 +16,14 @@ __version__ = '0.0.1'
 __author__ = 'Cid Kagenou'
 
 
-class EvasionSpoof():
+class IPAddressGenerator():
 
 
-    def spoof_ip(self):
-
+    def generate(self):
+        
         pass
 
 
-    def evade_firewall(self):
+    def validate(self):
 
         pass

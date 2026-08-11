@@ -5,7 +5,7 @@
 This module does domain scanning and intel recon.
 """
 
-import pprint
+import json
 
 __all__ = [
     'SubdomainGenerator'
