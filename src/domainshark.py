@@ -27,8 +27,6 @@ __version__ = '0.0.1'
 
 __author__ = 'Cid Kagenou'
 
-app = FastAPI(title="Domainshark", description="A simple FastAPI project guide")
-
 
 class DomainShark():
 
