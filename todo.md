@@ -8,12 +8,14 @@
 - Neural Network --> AI / Data Science / Machine Learning
 - Fill out missing methods
 - Human Readable Domain name
-- ##### Convert to an API --> [FastAPI](https://fastapi.tiangolo.com/tutorial/)
-    - [Tutorial Playlist](https://www.youtube.com/watch?v=7AMjmCTumuo&list=PL-osiE80TeTsak-c-QsVeg0YYG_0TeyXI)
-    ###### For:
+
+## Domain Shark API [Module]
+
+[FastAPI](https://fastapi.tiangolo.com/tutorial/)
+[FastAPI Tutorial Playlist](https://www.youtube.com/watch?v=7AMjmCTumuo&list=PL-osiE80TeTsak-c-QsVeg0YYG_0TeyXI)
     - API Rate Limiting
-    - Django Web Interface
-    - return web error messages for try/except block
+    - Domainshark Services (methods)
+    - Database connection
 - Database Implementation
 
 

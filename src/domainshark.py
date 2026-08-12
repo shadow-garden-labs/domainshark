@@ -299,13 +299,6 @@ class DomainShark():
         return report
 
 
-    def rainy_day_scan(self):
-        # If you find yourself really bored one rainy afternoon, try the command nmap -Pn -sS -p 80 -iR 0 --open to locate random web servers for browsing.
-
-        pass
-
-
-
 
 with DomainShark('google.com', range(87, 89)) as test_target:
 

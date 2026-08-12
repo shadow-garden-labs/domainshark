@@ -20,7 +20,8 @@ class IPAddressGenerator():
 
 
     def generate(self):
-        
+        # If you find yourself really bored one rainy afternoon, try the command nmap -Pn -sS -p 80 -iR 0 --open to locate random web servers for browsing.
+
         pass
 
 
