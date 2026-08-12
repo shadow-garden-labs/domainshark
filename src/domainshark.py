@@ -28,6 +28,8 @@ __version__ = '0.0.1'
 __author__ = 'Cid Kagenou'
 
 
+DEFAULT_SUBDOMAIN = 'src/assets/subdomain_names.txt'
+
 class DomainShark():
 
     """A Class Template for testing and templates.
@@ -37,7 +39,7 @@ class DomainShark():
     """
 
 
-    def __init__(self, target, ports, subdomain_textfile_location): # ports are and optional parameter.
+    def __init__(self, target, ports, subdomain_textfile_location=DEFAULT_SUBDOMAIN): # ports are and optional parameter.
 
         self.target = target
 
@@ -304,10 +306,8 @@ class DomainShark():
 
 
 
-testsubdomain_testfile = 'src/assets/subdomain_names.txt'
 
-
-with DomainShark('google.com', range(87, 89), testsubdomain_testfile) as test_target:
+with DomainShark('google.com', range(87, 89)) as test_target:
 
     print(f'[+]: {repr(test_target)}')
 
