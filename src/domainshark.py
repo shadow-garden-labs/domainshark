@@ -39,13 +39,13 @@ class DomainShark():
     """
 
 
-    def __init__(self, target, ports, subdomain_textfile_location=DEFAULT_SUBDOMAIN): # ports are and optional parameter.
+    def __init__(self, target, ports, subdomain_textfile=DEFAULT_SUBDOMAIN): # ports are and optional parameter.
 
         self.target = target
 
         self.ports = list(ports)
 
-        self.subdomains_file = open(subdomain_textfile_location, 'r')
+        self.subdomains_file = open(subdomain_textfile, 'r')
 
         self.data_conversion()
 
