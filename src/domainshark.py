@@ -17,6 +17,7 @@ from dns import resolver, reversename
 import dns.resolver
 import json
 from fastapi import FastAPI
+from sublist3r import Sublist3r
 
 
 __all__ = [
@@ -28,7 +29,6 @@ __version__ = '0.0.1'
 __author__ = 'Cid Kagenou'
 
 
-DEFAULT_SUBDOMAIN = 'src/assets/subdomain_names.txt'
 
 class DomainShark():
 
@@ -39,13 +39,11 @@ class DomainShark():
     """
 
 
-    def __init__(self, target, ports, subdomain_textfile=DEFAULT_SUBDOMAIN): # ports are and optional parameter.
+    def __init__(self, target, ports): # ports are and optional parameter.
 
         self.target = target
 
         self.ports = list(ports)
-
-        self.subdomains_file = open(subdomain_textfile, 'r')
 
         self.data_conversion()
 
@@ -72,29 +70,6 @@ class DomainShark():
     def __repr__(self):
 
         return f"DomainShark(target: '{self.target}', ports: {self.ports}, domain name: '{self.domain_name}', ipaddress: {self.ipaddress})"
-
-
-    def __enter__(self):
-
-        print('[+] OPENING FILE')
-
-        self.subdomains = self.subdomains_file.read().splitlines()
-    
-        return self # Bound to the 'as' variable
-
-
-    def __exit__(self, exc_type, exc_value, exc_traceback):
-
-        self.subdomains_file.close()
-
-        print('[+] CLOSING FILE')
-
-        # Cleanup code goes here
-        if exc_type:
-
-            print(f'An error occured: {exc_value}')
-
-        return False # Do not suppress exceptions
 
 
     def data_conversion(self):
@@ -176,12 +151,12 @@ class DomainShark():
             return "Unknown (No Reverse DNS record found)"
 
 
-    def subdomain_scanner(self): # Print a message if no subdomains are found.
+    def subdomain_scanner(self, subdomain_list: Sublist3r): # Print a message if no subdomains are found.
 
         print('----URL after scanning subdomains----')
         
         # loop for getting URL's
-        for subdomain in self.subdomains:
+        for subdomain in subdomain_list.subdomains:
         
             # making url by putting subdomain one by one
             url = f'https://{subdomain}.{self.target}'
@@ -285,12 +260,6 @@ class DomainShark():
 
                 print(f"► {rdata}")
 
-    
-    def org_email_addresses(self):
-        # Return organization domain-based emails.
-
-        pass
-
 
     def report(self):
 
@@ -300,8 +269,10 @@ class DomainShark():
 
 
 
-with DomainShark('google.com', range(87, 89)) as test_target:
+with Sublist3r() as test:
 
-    print(f'[+]: {repr(test_target)}')
+    test_target = DomainShark('google.com', range(87, 89))
 
-    test_target.dns_resolver()
+    test_target.subdomain_scanner(test)
+    
+    print(test.subdomains)

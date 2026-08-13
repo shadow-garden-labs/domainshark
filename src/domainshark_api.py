@@ -81,71 +81,71 @@ def create_target(domain_target: DomainShark):
     }
 
 
-@app.get("/target/forward-dns")
+@app.get("/target/{target_id}/forward-dns")
 def get_forward_dns(self):
 
     pass
 
 
-@app.get("/target/reverse-dns")
+@app.get("/target/{target_id}/reverse-dns")
 def get_reverse_dns(self):
 
     pass
 
-@app.get("/target/subdomains")
+@app.get("/target/{target_id}/subdomains")
 def subdomain_scanner(self): # Print a message if no subdomains are found.
 
     pass
 
-@app.get("/target/protscan")
+@app.get("/target/{target_id}/protscan")
 def get_portscanner(self):
  
     pass
 
 
-@app.get("/target/os-details")
+@app.get("/target/{target_id}/os-details")
 def os_details(self):
     # Retrieve os details.
     pass
 
 
-@app.get("/target/host-status")
+@app.get("/target/{target_id}/host-status")
 def host_status(self):
     # Retrieve host status.
     pass
 
 
-@app.get("/target/running-services")
+@app.get("/target/{target_id}/running-services")
 def running_services(self, port):
     # Retrieve running services on port.
     pass
 
 
-@app.get("/target/traceroute")
+@app.get("/target/{target_id}/traceroute")
 def traceroute(self):
     # Retrieve exact pathway to target.
     pass
 
 
-@app.get("/target/whois")
+@app.get("/target/{target_id}/whois")
 def whois_ip_address(self):
     # Retrieve whois data.
     pass
 
 
-@app.get("/target/ans-number")
+@app.get("/target/{target_id}/ans-number")
 def domain_asn_number(self):
     # Return Autonomous System Number (ANS), globally unique 16-bit or 32-bit number assigned to a network that manages a specific block of IP addresses.
     pass
 
 
-@app.get("/target/dns-resolver")
+@app.get("/target/{target_id}/dns-resolver")
 def dns_resolver(self):
 
     pass
 
 
-@app.get("/target/report")
+@app.get("/target/{target_id}/report")
 def report(self):
 
     report = {} # Generate a human readable report of data retieved from the domain name.
