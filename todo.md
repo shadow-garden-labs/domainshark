@@ -46,5 +46,9 @@
 
 ## PortScanner [Module]
 
+- Types of Port Scans
+    - TCP Scanning Techniques
+    - Stealth and Evasion Scans
+    - Other Probing Methods
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
