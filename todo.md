@@ -7,7 +7,8 @@
 
 - Neural Network --> AI / Data Science / Machine Learning
 - Fill out missing methods
-- Human Readable Domain name
+- Abstract out the tcp_port_scan method with new PortScanner Module
+
 
 ## Domain Shark API [Module]
 
@@ -38,6 +39,12 @@
 
 
 ## IPAddressGenerator [Module]
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+
+
+## PortScanner [Module]
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.

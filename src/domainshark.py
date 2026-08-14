@@ -18,6 +18,7 @@ import dns.resolver
 import json
 from fastapi import FastAPI
 from sublist3r import Sublist3r
+from port_scanner import PortScanner
 
 
 __all__ = [
@@ -39,37 +40,18 @@ class DomainShark():
     """
 
 
-    def __init__(self, target, ports): # ports are and optional parameter.
+    def __init__(self, target):
 
         self.target = target
-
-        self.ports = list(ports)
 
         self.data_conversion()
 
         self.record_types = ["A", "AAAA", "CNAME", "MX", "NS", "SOA", "TXT", "PTR", "SRV", "CAA", "DNAME"]
 
 
-    def target_conversion(self, data: str):
-
-        #if the data is a domain name --> set it to self.target, and use the domain name to find the ip address
-        if isinstance(data, str): 
-
-            self.new_ipaddress = ipaddress.ip_address(data)
-
-        #if the data is an ipaddress --> set it to self.ipaddress, and use the ipaddress to find the domain name.
-        elif isinstance(data, ipaddress):
-
-            self.new_ipaddress = data # Already a ipaddress type
-
-        else:
-
-            raise TypeError("Target must be a string")
-
-
     def __repr__(self):
 
-        return f"DomainShark(target: '{self.target}', ports: {self.ports}, domain name: '{self.domain_name}', ipaddress: {self.ipaddress})"
+        return f"DomainShark(target: '{self.target}', domain name: '{self.domain_name}', ipaddress: {self.ipaddress})"
 
 
     def data_conversion(self):
@@ -177,13 +159,15 @@ class DomainShark():
                 pass
 
 
-    def portscanner(self):
+    def tcp_port_scan(self, ports):
         
-        print(f"----Scanning Ports: {self.ip_address} ---- '{self.target}'----")
+        print(f"----Scanning Ports: {self.ipaddress} ---- '{self.domain_name}'----")
         
         open_ports = []
         
-        for port in self.ports:
+        ports_list = list(ports)
+
+        for port in ports_list:
 
             # Create a TCP socket object
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -191,7 +175,7 @@ class DomainShark():
             s.settimeout(.25) # Fast timeout to skip closed ports
             
             # connect_ex returns 0 if the connection succeeded
-            result = s.connect_ex((self.ip_address, port))
+            result = s.connect_ex((str(self.ipaddress), port))
 
             if result == 0:
 
@@ -206,6 +190,11 @@ class DomainShark():
             s.close()
 
         return open_ports
+
+
+    def human_readable_domain(self):
+
+        pass
 
 
     def os_details(self):
@@ -269,10 +258,16 @@ class DomainShark():
 
 
 
-with Sublist3r() as test:
+with Sublist3r() as test_subdomain:
 
-    test_target = DomainShark('google.com', range(87, 89))
+    test_target = DomainShark('142.251.218.78')
 
-    test_target.subdomain_scanner(test)
+    # test_target.subdomain_scanner(test)
+
+    ports = [88, 99, 65]
+
+    test_target.tcp_port_scan(ports)
+
+    # print(test_target.ipaddress)
     
-    print(test.subdomains)
+    print(test_subdomain.subdomains)

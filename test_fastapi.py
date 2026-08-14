@@ -31,3 +31,4 @@ def create_product(product: Product):
         "product_name": product.name,
         "discounted_price": discount_price
     }
+
