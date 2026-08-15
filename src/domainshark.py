@@ -176,11 +176,6 @@ class DomainShark():
         pass
 
 
-    def running_services(self, port):
-        # Retrieve running services on port.
-        pass
-
-
     def traceroute(self):
         # Retrieve exact pathway to target.
         pass

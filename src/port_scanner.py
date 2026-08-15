@@ -25,6 +25,11 @@ class PortScanner():
         self.ipaddress = ipaddress
 
 
+    def running_services(self, port):
+        # Retrieve running services on port.
+        pass
+
+
     def tcp_port_scan(self, ports):
                 
         open_ports = []
