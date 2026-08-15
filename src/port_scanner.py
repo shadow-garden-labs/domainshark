@@ -88,8 +88,3 @@ class PortScanner():
     def example_port_scan_technique(self):
 
         pass
-
-
-test = PortScanner("142.251.218.78")
-
-test.tcp_port_scan([88, 89])

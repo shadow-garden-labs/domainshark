@@ -46,6 +46,8 @@ class DomainShark():
 
         self.data_conversion()
 
+        self.port_scan = PortScanner(self.ipaddress)
+
         self.record_types = ["A", "AAAA", "CNAME", "MX", "NS", "SOA", "TXT", "PTR", "SRV", "CAA", "DNAME"]
 
 
@@ -159,39 +161,6 @@ class DomainShark():
                 pass
 
 
-    def tcp_port_scan(self, ports):
-        
-        print(f"----Scanning Ports: {self.ipaddress} ---- '{self.domain_name}'----")
-        
-        open_ports = []
-        
-        ports_list = list(ports)
-
-        for port in ports_list:
-
-            # Create a TCP socket object
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-            s.settimeout(.25) # Fast timeout to skip closed ports
-            
-            # connect_ex returns 0 if the connection succeeded
-            result = s.connect_ex((str(self.ipaddress), port))
-
-            if result == 0:
-
-                open_ports.append(port)
-
-                print(f'[+] Port {port}: OPEN')
-            
-            else:
-
-                print(f'[+] Port {port}: CLOSED')
-
-            s.close()
-
-        return open_ports
-
-
     def human_readable_domain(self):
 
         pass
@@ -266,8 +235,8 @@ with Sublist3r() as test_subdomain:
 
     ports = [88, 99, 65]
 
-    test_target.tcp_port_scan(ports)
+    test_target.port_scan.tcp_port_scan(ports)
 
     # print(test_target.ipaddress)
     
-    print(test_subdomain.subdomains)
+    # print(test_subdomain.subdomains)
