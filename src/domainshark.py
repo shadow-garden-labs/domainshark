@@ -135,32 +135,6 @@ class DomainShark():
             return "Unknown (No Reverse DNS record found)"
 
 
-    def subdomain_scanner(self, subdomain_list: Sublist3r): # Print a message if no subdomains are found.
-
-        print('----URL after scanning subdomains----')
-        
-        # loop for getting URL's
-        for subdomain in subdomain_list.subdomains:
-        
-            # making url by putting subdomain one by one
-            url = f'https://{subdomain}.{self.target}'
-            
-            # using try catch block to avoid crash of the
-            # program
-            try:
-                # sending get request to the url
-                requests.get(url)
-                
-                # if after putting subdomain one by one url 
-                # is valid then printing the url
-                print(f'[+] {url}')
-                
-                # if url is invalid then pass it
-            except requests.ConnectionError:
-
-                pass
-
-
     def human_readable_domain(self):
 
         pass
@@ -224,13 +198,13 @@ class DomainShark():
 
 with Sublist3r() as test_subdomain:
 
-    test_target = DomainShark('142.251.218.78')
+    test_target = DomainShark('google.com')
 
-    # test_target.subdomain_scanner(test)
+    print(test_subdomain.subdomain_scanner(test_target.target))
 
-    ports = [88, 99, 65]
+    # ports = [88, 99, 65]
 
-    test_target.port_scan.tcp_port_scan(ports)
+    # test_target.port_scan.tcp_port_scan(ports)
 
     # print(test_target.ipaddress)
     

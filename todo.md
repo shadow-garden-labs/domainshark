@@ -22,6 +22,8 @@
 
 ## Sublist3r [Module]
 
+- subdomain_scanner
+- __enter__ and __exit__ methods remove/replace for subdomain opening file
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 
