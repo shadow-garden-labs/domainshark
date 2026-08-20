@@ -1,4 +1,8 @@
 from urllib.parse import urlparse
+import requests
+
+domain_name = 'google.com'
+
 
 subdomain_list = ['mail', 'mail2', 'www', 'ns2', 'ns1', 'blog', 'localhost', 'm', 'ftp', 
     'mobile', 'ns3', 'smtp', 'search', 'api', 'dev', 'secure', 'webmail', 'admin', 'img',
@@ -10,9 +14,7 @@ subdomain_dict = {"Subdomain URLs": []}
 
 new_subdomain_dict = {"New Subdomain URLs": []}
 
-def test_subdomain():
-
-    domain_name = 'google.com'
+def update_subdomain_dict():
 
     for subdomain in subdomain_list:
         
@@ -20,7 +22,6 @@ def test_subdomain():
 
         subdomain_dict["Subdomain URLs"].append(url)
 
-    print(subdomain_dict)
 
 
 def is_valid_url(url: str) -> bool:
@@ -32,18 +33,30 @@ def is_valid_url(url: str) -> bool:
         return False
 
 
-def new_dict():
+def sublist3r():
 
-    for url in subdomain_dict:
+    domain_name = 'google.com'
 
-        if is_valid_url(url):
+    for subdomain in subdomain_list:
 
-            new_subdomain_dict["New Subdomain URLs"].append(url)
+        url = f'https://{subdomain}.{domain_name}'
 
-    return new_subdomain_dict
+        try:
+            # sending get request to the url
+            requests.get(url)
+        
+            # if after putting subdomain one by one url 
+            # is valid then printing the url
+            subdomain_dict["Subdomain URLs"].append(url)
+        
+            # if url is invalid then pass it
+        except (requests.ConnectionError, requests.Timeout):
 
-test = {"New Subdomain URLs": []}
+            pass
 
-test["New Subdomain URLs"].append("Hello")
 
-print(new_subdomain_dict)
+update_subdomain_dict()
+
+sublist3r()
+
+print(subdomain_dict)
