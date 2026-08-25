@@ -1,56 +1,40 @@
-# Project [Task]
-- Documentation
-- README.md
+## DomainShark [Object]
+
+**What is it?:** *String?*
+
+**What it does:** *given an ipaddress string, it converts that ipaddress to its domain name*
+- Human-readable domain name
+- is_strict_domain (may need to change the way the domain name is retreived)
+    - only taking in an ipaddress as a param, so need to find another way of getting and setting the domain name
+- is_ipaddress
+- reverse dns
+- forward dns
+- Additional Functionality
 
 
-## Domain Shark [Module]
+## Sublist3r [Object]
 
-- Neural Network --> AI / Data Science / Machine Learning
-- Fill out missing methods
-- Abstract out the tcp_port_scan method with new PortScanner Module
+**What is it?:** *Queue?/Stack?/List?*
 
+**What it does:** *Given a text file of new line separated strings, it converts those to a list containing only strings.*
+- Subdomain URL Connection Verification
+- Additional Functionality
 
-## Domain Shark API [Module]
+## PortScanner [Object]
 
-[FastAPI](https://fastapi.tiangolo.com/tutorial/)
-[FastAPI Tutorial Playlist](https://www.youtube.com/watch?v=7AMjmCTumuo&list=PL-osiE80TeTsak-c-QsVeg0YYG_0TeyXI)
-    - API Rate Limiting
-    - Domainshark Services (methods)
-    - Database connection
-- Database Implementation
+**What is it?:** *Boolean?*
 
-
-## Sublist3r [Module]
-
-- subdomain_scanner
-- __enter__ and __exit__ methods remove/replace for subdomain opening file
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-
-
-## VirtualEnvironmentGenerator [Module]
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-
-
-## EvasionSpoof [Module]
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-
-
-## IPAddressGenerator [Module]
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-
-
-## PortScanner [Module]
-
+**What it does:** *Given an ipaddress, it verifies if a port connection is True/False(Open/Close).*
+- Subdomain URL Connection Verification
 - Types of Port Scans
     - TCP Scanning Techniques
     - Stealth and Evasion Scans
     - Other Probing Methods
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+- Additional Functionality
+
+
+### Current Functionality
+
+**{Project} What is it?:** Network Mapper
+
+**What it does?:** *Maps out a given ipaddress network.*
