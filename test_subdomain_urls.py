@@ -13,9 +13,8 @@ subdomain_list = [
     'conc'
     ]
 
-subdomain_dict = {"Subdomain URLs": []}
+url_lists = []
 
-new_subdomain_dict = {"New Subdomain URLs": []}
 
 def update_subdomain_dict():
 
@@ -37,10 +36,8 @@ def sublist3r():
         try:
             # sending get request to the url
             requests.get(url)
-        
-            # if after putting subdomain one by one url 
-            # is valid then printing the url
-            subdomain_dict["Subdomain URLs"].append(url)
+
+            url_lists.append(url)
         
             # if url is invalid then pass it
         except (requests.ConnectionError, requests.Timeout):
@@ -56,7 +53,7 @@ class Sublist3r:
 
         self.domain_name = domain_name
         
-        self.subdomain_dict = {"Subdomain URLs": []}
+        self.url_list = []
 
 
     def get_subdomains(self):
@@ -83,7 +80,7 @@ class Sublist3r:
             
                 # if after putting subdomain one by one url 
                 # is valid then printing the url
-                self.subdomain_dict["Subdomain URLs"].append(url)
+                self.url_list.append(url)
             
                 # if url is invalid then pass it
             except (requests.ConnectionError, requests.Timeout):
@@ -92,8 +89,7 @@ class Sublist3r:
 
 
 
-update_subdomain_dict()
 
 sublist3r()
 
-print(subdomain_dict)
+print(url_lists)
