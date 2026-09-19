@@ -1,40 +1,25 @@
 ## DomainShark [Object]
 
-**What is it?:** *String?*
+**Dunder Methods:** *String?*
 
 **What it does:** *given an ipaddress string, it converts that ipaddress to its domain name*
-- Human-readable domain name
-- is_strict_domain (may need to change the way the domain name is retreived)
-    - only taking in an ipaddress as a param, so need to find another way of getting and setting the domain name
-- is_ipaddress
-- reverse dns
-- forward dns
+- Dunder Methods
 - Additional Functionality
 
 
 ## Sublist3r [Object]
 
-**What is it?:** *Queue?/Stack?/List?*
+**Dunder Methods:** *Queue?/Stack?/List?*
 
-**What it does:** *Given a text file of new line separated strings, it converts those to a list containing only strings.*
-- Subdomain URL Connection Verification
+**What it does:** *Given a text file of new line separated strings, it converts those to a list containing only url strings.*
+- Dunder Methods
 - Additional Functionality
+
 
 ## PortScanner [Object]
 
-**What is it?:** *Boolean?*
+**Dunder Methods:** *Boolean?*
 
 **What it does:** *Given an ipaddress, it verifies if a port connection is True/False(Open/Close).*
-- Subdomain URL Connection Verification
-- Types of Port Scans
-    - TCP Scanning Techniques
-    - Stealth and Evasion Scans
-    - Other Probing Methods
+- Dunder Methods
 - Additional Functionality
-
-
-### Current Functionality
-
-**{Project} What is it?:** Network Mapper
-
-**What it does?:** *Maps out a given ipaddress network.*
