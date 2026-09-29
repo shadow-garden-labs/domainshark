@@ -16,7 +16,7 @@ __version__ = '0.0.1'
 
 __author__ = 'Cid Kagenou'
 
-DEFAULT_TEXTFILE = 'src/assets/subdomain_names.txt'
+DEFAULT_TEXTFILE = 'domainshark/src/assets/subdomain_names.txt'
 
 
 class Sublist3r():
