@@ -2,7 +2,7 @@
 
 **What is it?:** *String?*
 
-**What it does:** *given an ipaddress string, it converts that ipaddress to its domain name*
+**What it does:** *Given an ipaddress string, it retrieves network information on the ipaddress*
 - Human-readable domain name
 - is_strict_domain (may need to change the way the domain name is retreived)
     - only taking in an ipaddress as a param, so need to find another way of getting and setting the domain name
@@ -16,7 +16,7 @@
 
 **What is it?:** *Queue?/Stack?/List?*
 
-**What it does:** *Given a text file of new line separated strings, it converts those to a list containing only url strings.*
+**What it does:** *Given a text file of new line separated strings, it converts those to a subdomain list of strings of a domain.*
 - Subdomain URL Connection Verification
 - Additional Functionality
 
@@ -24,7 +24,7 @@
 
 **What is it?:** *Boolean?*
 
-**What it does:** *Given an ipaddress, it verifies if a port connection is True/False(Open/Close).*
+**What it does:** *Verifies if a port connection is True/False(Open/Close).*
 - Subdomain URL Connection Verification
 - Types of Port Scans
     - TCP Scanning Techniques
