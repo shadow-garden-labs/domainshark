@@ -33,8 +33,8 @@
 - Additional Functionality
 
 
-### Current Functionality
+### Projects Functionality
 
-**{Project} What is it?:** Network Mapper
+**{Project} What is it?:** IP information gatherer
 
-**What it does?:** *Maps out a given ipaddress network.*
+**What it does?:** *Retrieves information from any given ipaddress.*

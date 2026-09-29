@@ -1,5 +1,6 @@
 ## DomainShark [Object]
 
+
 **Dunder Methods:** *String?*
 
 **What it does:** *given an ipaddress string, it converts that ipaddress to its domain name*
@@ -23,3 +24,12 @@
 **What it does:** *Given an ipaddress, it verifies if a port connection is True/False(Open/Close).*
 - Dunder Methods
 - Additional Functionality
+
+
+## TO DO
+- dunder methods for module data types 
+- rate limiting [API]
+- test cases
+- main CLI (argparse) for application
+- rewrite README.md
+
